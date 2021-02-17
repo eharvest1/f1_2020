@@ -1,0 +1,15 @@
+<h3>Classement ecuries</h3>
+
+
+    <tr class="ecuries-item" >
+        <td class="ecuries-item"><b>id_ecurie</b></td>
+        <td class="ecuries-item"><b>ecurie_name</b></td>
+        <td  class="ecuries-item"><b>nb_points</b></td>
+    </tr>
+
+<tr class="ecuries-item" *ngFor="let e of ecuriesList | async">
+  <td  class="ecuries-item">{{ e.id_ecurie }}</td>
+  <td  class="ecuries-item">{{ e.ecurie_name }}</td>
+  <td  class="ecuries-item">{{ e.nb_points }}</td>
+</tr>
+

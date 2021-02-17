@@ -1,0 +1,9 @@
+<h3>Shipping Prices</h3>
+
+
+<tr class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+  <td>{{ shipping.lastName }}</td>
+
+  <td>{{ shipping.nom_ecurie }}</td>
+  <td>{{ shipping.numero }}</td>
+</tr>

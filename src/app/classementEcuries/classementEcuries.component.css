@@ -1,0 +1,32 @@
+
+
+   .ecuries-item {
+    width: 100%;
+    min-width: 100px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: right;
+    padding: 4px 6px;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    /* border-spacing: 10px; */
+    background-color: #EEEEEE;
+  }
+  
+  .ecuries-item2 {
+    width: 100%;
+    min-width: 100px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: right;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    font-weight: bold;
+    /* border-spacing: 10px; */
+    background-color: #EEEEEE;
+  }

@@ -1,0 +1,76 @@
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { NavigationService } from 'src/app/navigation.service';
+import { Observable } from 'rxjs';
+import { SideNavDirection } from './side-nav-direction';
+import { CartService } from '../cart.service';
+import { Router } from '@angular/router';
+import {  Output, EventEmitter } from '@angular/core'
+import { ClassementGPComponent } from '../classementGP/classementGP.component';
+
+@Component({
+  selector: 'app-side-nav',
+  templateUrl: './side-nav.component.html',
+  styleUrls: ['./side-nav.component.css'],
+  encapsulation: ViewEncapsulation.None
+})
+export class SideNavComponent implements OnInit {
+
+ 
+
+  showSideNav: Observable<boolean>;
+
+  @Input() sidenavTemplateRef: any;
+  @Input() duration: number = 0.25;
+  @Input() navWidth: number = window.innerWidth;
+  @Input() direction: SideNavDirection = SideNavDirection.Left;
+  
+  
+
+  constructor(private navService: NavigationService, private cartService: CartService) {
+
+    this.GPList = this.cartService.getListeGPs();
+   
+  }
+
+  ngOnInit(): void {
+    this.showSideNav = this.navService.getShowNav();
+  }
+
+  onSidebarClose() {
+    this.navService.setShowNav(false);
+  }
+
+  getSideNavBarStyle(showNav: boolean) {
+    let navBarStyle: any = {};
+    
+    navBarStyle.transition = this.direction + ' ' + this.duration + 's, visibility ' + this.duration + 's';
+    navBarStyle.width = this.navWidth + 'px';
+    navBarStyle[this.direction] = (showNav ? 0 : (this.navWidth * -1)) + 'px';
+    
+    return navBarStyle;
+  }
+
+  public GPList ;
+  @Output() sidenavClose = new EventEmitter();
+
+  onRowClicked(gp)
+  {
+ //  ClassementGPComponent.classementGP2 = this.cartService.getClassementGP();
+//alert("hello 1");
+   // this.cartService.setId_gp(gp);
+   // this.GPList = this.cartService.getClassementGP();
+  // this.cartService.setId_gp(gp.id_gp);
+
+  
+  // CartService.classementGP = this.cartService.getClassementGP();
+   // this.GPList = 
+   
+    this.navService.setShowNav(false);
+    //document.location.reload();
+   
+  }
+
+  public onSidenavClose = () => {
+    this.sidenavClose.emit();
+  }
+}

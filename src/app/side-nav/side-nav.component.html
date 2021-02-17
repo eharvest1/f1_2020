@@ -1,0 +1,49 @@
+<!-- side bar main wrapper -->
+<div class="side-nav-bar"
+    [ngClass]="{ 'side-nav-bar-collapsed': !(showSideNav | async) }">
+    
+    <!-- overlay -->
+    <div class="side-nav-bar-overlay" 
+    [ngStyle]="{ 'transition': 'background-color ' + duration + 's, visibility ' + duration + 's' }"
+    [ngClass]="{ 'side-nav-bar-overlay-collapsed': !(showSideNav | async) }"
+        (click)="onSidebarClose()"></div>
+    
+    <!-- side bar-->
+    <div class="side-nav-bar-menu-container" 
+    [ngStyle]="getSideNavBarStyle((showSideNav | async))">
+        
+        <!-- close button -->
+        <div><span class="material-icons side-nav-bar-close" (click)="onSidebarClose()">clear</span></div>
+
+        <!-- side bar content -->
+        <!-- <div class="side-nav-bar-content-container">
+            <ng-container *ngTemplateOutlet="GPList | async"></ng-container>  -->
+            <!-- <mat-nav-list class="gp-item">
+                <a mat-list-item  *ngFor="let gp of  GPList | async"  (click)="onRowClicked(gp)" 
+                routerLink="/classementGP"> {{ gp.pays_gp}} </a>
+             </mat-nav-list> -->
+        <!-- </div> -->
+       
+
+    <!-- </div> -->
+
+    <mat-nav-list>
+     
+     
+            <mat-panel-title >
+             <b class="pilotes2-item"> grands prix </b> 
+            
+            </mat-panel-title>
+  
+      
+          <div class="pilotes-item" *ngFor="let gp of GPList | async" (click)="onRowClicked(gp)">
+         <!-- <a class="pilotes-item"  routerLink="/classementGP" >    {{ gp.pays_gp }}</a> -->
+         
+         <a class="pilotes-item" [routerLink]="['/classementGP']" [queryParams]="{ id_gp:   gp.id_gp}">    {{ gp.pays_gp }}</a> 
+          </div>
+        <!-- </mat-expansion-panel> -->
+      </mat-nav-list>
+    
+
+     
+</div>

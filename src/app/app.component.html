@@ -1,0 +1,34 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+ <app-top-bar></app-top-bar> 
+ <app-top-buttons></app-top-buttons> 
+   <div class="container">
+   <app-header></app-header>
+  
+   <section>
+
+      <router-outlet></router-outlet> 
+    </section>
+
+
+
+   </div>
+
+
+   <ng-template #navContent>
+    <h3> Grands prix list</h3>
+   </ng-template>
+   <app-side-nav 
+   [sidenavTemplateRef]="navContent"
+   [direction]="'left'" 
+   [navWidth]="280" 
+   [duration]="0.5"></app-side-nav>
+

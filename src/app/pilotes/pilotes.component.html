@@ -1,0 +1,28 @@
+<h3>Pilotes list</h3>
+
+
+    
+    <tr class="pilotes-item" font-weight="bold" >
+        <td font-weight="bold" class="pilotes-item"><b>Ecurie</b></td>
+        <td  font-weight="bold" class="pilotes-item"><b>Name</b></td>
+        <td  font-weight="bold" class="pilotes-item"><b>Number</b></td> 
+    </tr>
+
+<tr class="pilotes-item" *ngFor="let pilote of pilotesList | async">
+  <td class="pilotes-item">{{ pilote.nom_ecurie }}</td>
+  <td class="pilotes-item">{{ pilote.lastName }}</td>
+  <td class="pilotes-item">{{ pilote.numero }}</td>
+
+</tr>
+<!-- <mat-selection-list #pilotesList class="ecuries-item">
+  <mat-list-option *ngFor="let shoe of pilotesList | async" class="ecuries-item" >
+    abcdef
+  </mat-list-option>
+</mat-selection-list> -->
+
+
+<!-- <ul class="ecuries-item">
+  <li *ngFor="let course of pilotesList | async" class="ecuries-item">
+    {{ course.lastName }}
+  </li>
+</ul> -->

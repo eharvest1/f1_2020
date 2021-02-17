@@ -1,0 +1,23 @@
+<!-- <h3>Classement du grand prix{{classementGP[0].nom_gp}} - {{ classementGP[0].pays_gp}}</h3> -->
+
+
+
+    <tr class="infoi" *ngFor="let e of classementGP | async;  index as i;">
+      <div *ngIf="i == 0">
+      <b>Classement du grand prix : {{ e.pays_gp}}  </b>
+    </div>
+    </tr>
+  
+
+    <tr class="cgp-item" >
+        <td class="cgp-item"><b>Pilote</b></td>
+        <td  class="cgp-item"><b>position</b></td>
+        <td class="cgp-item"><b>points</b></td>
+    </tr>
+<tr class="cgp-item" *ngFor="let e of classementGP | async">
+
+  <td  class="cgp-item">{{ e.piloteName }}</td>
+  <td  class="cgp-item">{{ e.position }}</td>
+  <td  class="cgp-item">{{ e.points }}</td>
+</tr>
+

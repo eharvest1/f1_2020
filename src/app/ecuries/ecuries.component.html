@@ -1,0 +1,17 @@
+<h3>Ecuries list</h3>
+
+
+    <tr class="ecuries-item" >
+        <td class="ecuries-item"><b>id ecurie</b></td>
+        <td class="ecuries-item"><b>ecurie name</b></td>
+        <td  class="ecuries-item"><b>Pilote1 name</b></td>
+        <td  class="ecuries-item"><b>Pilote2 name</b></td>
+       
+    </tr>
+
+<tr class="ecuries-item" *ngFor="let e of ecuriesList | async">
+  <td  class="ecuries-item">{{ e.id_ecurie }}</td>
+  <td  class="ecuries-item">{{ e.ecurie_name }}</td>
+  <td  class="ecuries-item">{{ e.pilote1name }}</td>
+  <td  class="ecuries-item">{{ e.pilote2name }}</td>
+</tr>

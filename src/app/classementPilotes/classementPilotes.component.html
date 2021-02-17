@@ -1,0 +1,17 @@
+<h3>Classement pilotes</h3>
+
+
+    <tr class="ecuries-item" >
+        <td class="ecuries-item"><b>numero</b></td>
+        <td class="ecuries-item"><b>lastName</b></td>
+        <td  class="ecuries-item"><b>nom_ecurie</b></td>
+        <td  class="ecuries-item"><b>nbPoints</b></td>
+    </tr>
+
+<tr class="ecuries-item" *ngFor="let e of ecuriesList | async">
+  <td  class="ecuries-item">{{ e.numero }}</td>
+  <td  class="ecuries-item">{{ e.lastName }}</td>
+  <td  class="ecuries-item">{{ e.nom_ecurie }}</td>
+  <td  class="ecuries-item">{{ e. nbPoints}}</td>
+</tr>
+
